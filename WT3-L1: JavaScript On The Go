@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login Form</title>
+
+<style>
+
+    body {
+
+        font-family: Arial, sans-serif;
+
+        background-color: #f4f4f4;
+
+    }
+
+
+
+    .container {
+
+        width: 300px;
+
+        margin: 100px auto;
+
+        padding: 20px;
+
+        background-color: #fff;
+
+        border-radius: 5px;
+
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    }
+
+
+
+    h2 {
+
+        text-align: center;
+
+        color: #333;
+
+    }
+
+
+
+    input[type="text"],
+
+    input[type="password"] {
+
+        width: 100%;
+
+        padding: 10px;
+
+        margin: 10px 0;
+
+        border: 1px solid #ccc;
+
+        border-radius: 3px;
+
+        box-sizing: border-box;
+
+    }
+
+
+
+    input[type="submit"] {
+
+        width: 100%;
+
+        padding: 10px;
+
+        margin-top: 10px;
+
+        background-color: #007bff;
+
+        color: #fff;
+
+        border: none;
+
+        border-radius: 3px;
+
+        cursor: pointer;
+
+    }
+
+
+
+    input[type="submit"]:hover {
+
+        background-color: #0056b3;
+
+    }
+
+
+
+    .error {
+
+        color: red;
+
+        margin-top: 5px;
+
+    }
+
+
+
+    .warning {
+
+        color: orange;
+
+        margin-top: 5px;
+
+    }
+
+</style>
+
+</head>
+
+<body>
+
+
+
+<div class="container">
+
+    <h2>Login Form</h2>
+
+    <form id="loginForm">
+
+        <input type="text" id="role" placeholder="Username">
+
+        <input type="password" id="password" placeholder="Password">
+
+        <input type="submit" value="Login">
+
+    </form>
+
+    <div id="errorMessage" class="error"></div>
+
+</div>
+
+
+
+<script>
+
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        var role = document.getElementById("Username").value;
+
+        var password = document.getElementById("password").value;
+
+        checkCredentials(role, password);
+
+    });
+
+
+
+    function checkCredentials(role, password) {
+
+        // Function to check user role and password validity
+
+        if (role === "Department Head") {
+
+            // Check password
+
+            if (password === "SiEsD3ptH34d") {
+
+                console.log("Welcome, Department Head!");
+
+            } else {
+
+                document.getElementById("errorMessage").textContent = "Incorrect password for Department Head.";
+
+            }
+
+        } else if (role === "Faculty") {
+
+            // Check password
+
+            if (password === "SiEsF4cu1ty") {
+
+                console.log("Welcome, Faculty!");
+
+            } else {
+
+                document.getElementById("errorMessage").textContent = "Incorrect password for Faculty.";
+
+            }
+
+        } else if (role === "Student Officer") {
+
+            // Check password
+
+            if (password === "#CCSOAko") {
+
+                console.log("Welcome, Student Officer!");
+
+            } else {
+
+                document.getElementById("errorMessage").textContent = "Incorrect password for Student Officer.";
+
+            }
+
+        } else if (role === "Student") {
+
+            // Check password
+
+            if (password === "3SapatNa!") {
+
+                console.log("Welcome, Student!");
+
+            } else {
+
+                document.getElementById("errorMessage").textContent = "Incorrect password for Student.";
+
+            }
+
+        } else {
+
+            document.getElementById("errorMessage").textContent = "Unknown Username. Please provide a valid Username.";
+
+        }
+
+    }
+
+</script>
+
+
+
+</body>
+
+</html>
